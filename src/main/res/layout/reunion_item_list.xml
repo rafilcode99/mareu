@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/parent_itemLayout">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ItemImageView"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:padding="20dp"></ImageView>
+
+            <TextView
+                android:id="@+id/subject_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-15dp"
+                android:layout_toEndOf="@+id/ItemImageView"
+                android:padding="20dp"
+                android:text="Sujet"
+                android:textSize="15dp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+                android:id="@+id/date_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="-20dp"
+                android:layout_toEndOf="@+id/subject_txt"
+                android:padding="20dp"
+                android:text="Time"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/location_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:layout_alignBottom="@+id/date_txt"
+                android:layout_alignParentTop="true"
+
+                android:layout_marginStart="-20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toEndOf="@+id/date_txt"
+                android:padding="20dp"
+                android:text="Location"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/delete_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="306dp"
+                android:layout_marginTop="25dp"
+                android:background="@null"
+                android:padding="20dp"
+                android:src="@drawable/ic_delete_black_24dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/emails_recyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date_txt"
+                android:layout_marginStart="-15dp"
+                android:layout_marginTop="0dp"
+                android:layout_toEndOf="@+id/ItemImageView"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </RelativeLayout>
+
+
+          </androidx.cardview.widget.CardView>
+        </HorizontalScrollView>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
